@@ -1,0 +1,20 @@
+//
+//  ViewController.swift
+//  To-do
+//
+//  Created by Baris on 4.02.2023.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        view.backgroundColor = .brown
+    }
+
+
+}
+
