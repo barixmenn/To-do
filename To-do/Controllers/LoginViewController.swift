@@ -51,6 +51,14 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private lazy var switchToRegistrationPage: UIButton = {
+           let button = UIButton(type: .system)
+           let attributedTitle = NSMutableAttributedString(string: "Click To Become A Member", attributes: [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 14)])
+           button.setAttributedTitle(attributedTitle, for: .normal)
+         //  button.addTarget(self, action: #selector(handleGoRegister), for: .touchUpInside)
+           return button
+       }()
+    
     private var stackView = UIStackView ()
     
 //MARK: -Lifecycle
@@ -71,7 +79,7 @@ extension LoginViewController {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.layer.cornerRadius = 150 / 2
         
-        stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+        stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton,switchToRegistrationPage])
         stackView.axis = .vertical
         stackView.spacing = 14
         stackView.distribution = .fillEqually
