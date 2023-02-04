@@ -10,13 +10,13 @@ import UIKit
 class LoginViewController: UIViewController {
     
     //MARK: - Properties
-    
+    private var viewModel = LoginViewModel()
     //MARK: - UI Elements
     private let logoImageView: UIImageView = {
         let imageView =  UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = UIImage(systemName: "checkmark.diamond")
+        imageView.image = UIImage(systemName: "sun.max")
         imageView.tintColor = .white
         return imageView
     }()
@@ -72,33 +72,68 @@ class LoginViewController: UIViewController {
     
 }
 
+//MARK: - Selector
+extension LoginViewController{
+    @objc private func handleTextField(_ sender: UITextField){
+        
+        if sender == emailTextField {
+            viewModel.emailText = sender.text
+        } else {
+            viewModel.passwordText = sender.text
+        }
+        loginButtonStatus()
+        
+    }
+}
+
+
+
 //MARK: - HELPERS
 extension LoginViewController {
+    private func loginButtonStatus(){
+           if viewModel.status{
+               loginButton.isEnabled = true
+               loginButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+               loginButton.setTitleColor(.black, for: .normal)
+           }else{
+               loginButton.isEnabled = false
+               loginButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+           }
+       }
     private func style(){
-        backgroundGradientColor()
+        //backgroundGradientColor()
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        switchToRegistrationPage.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.layer.cornerRadius = 150 / 2
         
-        stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton,switchToRegistrationPage])
+        stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
         stackView.axis = .vertical
         stackView.spacing = 14
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        emailTextField.addTarget(self, action: #selector(handleTextField), for: .editingChanged)
+         passwordTextField.addTarget(self, action: #selector(handleTextField), for: .editingChanged)
         
     }
     private func layout(){
         view.addSubview(logoImageView)
-        view.addSubview(stackView)
-        NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.widthAnchor.constraint(equalToConstant: 150),
-            logoImageView.heightAnchor.constraint(equalToConstant: 150),
-            
-            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 32),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            view.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 32),
-            
-        ])
+                view.addSubview(stackView)
+                view.addSubview(switchToRegistrationPage)
+                NSLayoutConstraint.activate([
+                    logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+                    logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    logoImageView.widthAnchor.constraint(equalToConstant: 150),
+                    logoImageView.heightAnchor.constraint(equalToConstant: 150),
+                    
+                    stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 32),
+                    stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+                    view.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 32),
+                    switchToRegistrationPage.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 8),
+                    switchToRegistrationPage.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 32),
+                    view.trailingAnchor.constraint(equalTo: switchToRegistrationPage.trailingAnchor, constant: 32)
+                    
+                   
+                ])
     }
 }
