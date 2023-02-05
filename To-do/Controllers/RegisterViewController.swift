@@ -10,6 +10,7 @@ import UIKit
 class RegisterViewController : UIViewController {
     //MARK: - Properties
     private var viewModel = RegisterViewModel()
+    
     //MARK: - UI Elements
     private let cameraButton : UIButton = {
         let camera = UIButton(type: .system)
@@ -17,6 +18,8 @@ class RegisterViewController : UIViewController {
         camera.tintColor = .white
         camera.contentVerticalAlignment = .fill
         camera.contentHorizontalAlignment = .fill
+        camera.layer.borderColor = UIColor.white.cgColor
+        camera.addTarget(self, action: #selector(handlePhoto), for: .touchUpInside)
         return camera
     }()
     
@@ -105,6 +108,11 @@ extension RegisterViewController {
     @objc private func handleGoLogin(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    @objc private func handlePhoto(_ sender : UIButton) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        self.present(picker, animated: true)
+    }
 }
 
 //MARK: - Helpers
@@ -159,6 +167,22 @@ extension RegisterViewController {
             switchToLoginPage.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 32),
             view.trailingAnchor.constraint(equalTo: switchToLoginPage.trailingAnchor, constant: 32)
         ])
+    }
+}
+
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension RegisterViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as! UIImage
+        cameraButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+        cameraButton.clipsToBounds = true
+        cameraButton.layer.cornerRadius = 150 / 2
+        cameraButton.contentMode = .scaleAspectFill
+        cameraButton.layer.backgroundColor = UIColor.white.cgColor
+        cameraButton.layer.borderWidth = 4
+        self.dismiss(animated: true)
     }
 }
 
