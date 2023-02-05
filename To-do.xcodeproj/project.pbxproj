@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		606D3E32298FDE9400A29672 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D3E31298FDE9400A29672 /* RegisterViewController.swift */; };
 		60F81453298EDFAC00E4C8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81452298EDFAC00E4C8CA /* AppDelegate.swift */; };
 		60F81455298EDFAC00E4C8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81454298EDFAC00E4C8CA /* SceneDelegate.swift */; };
 		60F81457298EDFAC00E4C8CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81456298EDFAC00E4C8CA /* LoginViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		606D3E31298FDE9400A29672 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		60F8144F298EDFAC00E4C8CA /* To-do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F81452298EDFAC00E4C8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F81454298EDFAC00E4C8CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				60F81456298EDFAC00E4C8CA /* LoginViewController.swift */,
+				606D3E31298FDE9400A29672 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				60F81457298EDFAC00E4C8CA /* LoginViewController.swift in Sources */,
 				60F81453298EDFAC00E4C8CA /* AppDelegate.swift in Sources */,
 				60F8146F298EF77300E4C8CA /* CustomTextField.swift in Sources */,
+				606D3E32298FDE9400A29672 /* RegisterViewController.swift in Sources */,
 				60F81455298EDFAC00E4C8CA /* SceneDelegate.swift in Sources */,
 				60F8146D298EF6D500E4C8CA /* AuthenticationInputView.swift in Sources */,
 				60F8146A298EE25700E4C8CA /* extensions.swift in Sources */,

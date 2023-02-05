@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
            let button = UIButton(type: .system)
            let attributedTitle = NSMutableAttributedString(string: "Click To Become A Member", attributes: [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 14)])
            button.setAttributedTitle(attributedTitle, for: .normal)
-         //  button.addTarget(self, action: #selector(handleGoRegister), for: .touchUpInside)
+           button.addTarget(self, action: #selector(handleGoRegister), for: .touchUpInside)
            return button
        }()
     
@@ -82,7 +82,12 @@ extension LoginViewController{
             viewModel.passwordText = sender.text
         }
         loginButtonStatus()
-        
+    }
+    
+    @objc private func handleGoRegister(_ sender: UIButton) {
+        let navigation = RegisterViewController()
+        navigation.modalPresentationStyle = .fullScreen
+        present(navigation, animated: true)
     }
 }
 
