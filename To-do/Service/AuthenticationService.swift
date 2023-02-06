@@ -18,6 +18,10 @@ struct AuthenticationViewModel {
 }
 
 struct AuthenticationService {
+    static func login(emailText:String, passwordText:String, completion: @escaping(AuthDataResult?,Error?)-> Void) {
+        Auth.auth().signIn(withEmail: emailText, password: passwordText,completion: completion)
+    }
+    
     static func createUser (user: AuthenticationViewModel, completion: @escaping(Error?)-> Void) {
         guard let profileImageData = user.profileImage.jpegData(compressionQuality: 0.5) else {return}
         let fileName = NSUUID().uuidString

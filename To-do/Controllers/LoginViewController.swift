@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 7
         button.isEnabled = false
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //button.addTarget(self, action: #selector(handleLoginButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -76,6 +76,18 @@ class LoginViewController: UIViewController {
 
 //MARK: - Selector
 extension LoginViewController{
+    
+    @objc private func handleLoginButton(_ sender: UIButton) {
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        AuthenticationService.login(emailText: email, passwordText: password) { data, error in
+            if let error = error {
+                print("Error:\(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true)
+        }
+    }
     @objc private func handleTextField(_ sender: UITextField){
         
         if sender == emailTextField {

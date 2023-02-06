@@ -99,6 +99,7 @@ extension RegisterViewController {
             if let error = error {
                 print("Error:\(error.localizedDescription)")
             }
+            self.dismiss(animated: true)
         }
 
         
