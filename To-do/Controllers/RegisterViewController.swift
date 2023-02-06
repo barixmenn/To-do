@@ -126,6 +126,13 @@ extension RegisterViewController {
         picker.delegate = self
         self.present(picker, animated: true)
     }
+    
+      @objc private func handleKeyboardWillShow(){
+          self.view.frame.origin.y = -110
+      }
+      @objc private func handleKeyboardWillHide(){
+          self.view.frame.origin.y = 0
+      }
 }
 
 //MARK: - Helpers
@@ -141,6 +148,8 @@ extension RegisterViewController {
          }
      }
     private func style() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         view.layer.backgroundColor = UIColor(red: 0.571, green: 0.302, blue: 0.302, alpha: 1).cgColor
         self.navigationController?.navigationBar.isHidden = true
         
