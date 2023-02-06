@@ -10,7 +10,7 @@ import UIKit
 class RegisterViewController : UIViewController {
     //MARK: - Properties
     private var viewModel = RegisterViewModel()
-    
+    private var profileImage : UIImage?
     //MARK: - UI Elements
     private let cameraButton : UIButton = {
         let camera = UIButton(type: .system)
@@ -31,10 +31,8 @@ class RegisterViewController : UIViewController {
         let containerView = AuthenticationInputView(image: UIImage(systemName: "person")!, textField: nameTextField)
         return containerView
     }()
-    private lazy var usernameContainerView: UIView = {
-        let containerView = AuthenticationInputView(image: UIImage(systemName: "person")!, textField: usernameTextField)
-        return containerView
-    }()
+ 
+
     private lazy var passwordContainerView: UIView = {
         let containerView = AuthenticationInputView(image: UIImage(systemName: "lock")!, textField: passwordTextField)
         
@@ -48,10 +46,7 @@ class RegisterViewController : UIViewController {
         let textField = CustomTextField(placeHolder: "Name")
         return textField
     }()
-    private let usernameTextField: UITextField = {
-        let textField = CustomTextField(placeHolder: "Username")
-        return textField
-    }()
+  
     private let passwordTextField: UITextField = {
         let textField = CustomTextField(placeHolder: "Password")
         textField.isSecureTextEntry = true
@@ -66,7 +61,7 @@ class RegisterViewController : UIViewController {
         button.layer.cornerRadius = 7
         button.isEnabled = false
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //button.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
         return button
     }()
     private var stackView = UIStackView()
@@ -92,15 +87,29 @@ class RegisterViewController : UIViewController {
 
 //MARK: - Selector
 extension RegisterViewController {
+    
+    @objc private func handleRegisterButton (_ sender: UIButton) {
+        guard let emailText = emailTextField.text else {return}
+        guard let passwordText = passwordTextField.text else {return}
+        guard let nameText = nameTextField.text else {return}
+        guard let profileImage = profileImage else {return}
+        
+        let user = AuthenticationViewModel(emailText: emailText, passwordText: passwordText, nameText: nameText, profileImage: profileImage)
+        AuthenticationService.createUser(user: user) { error in
+            if let error = error {
+                print("Error:\(error.localizedDescription)")
+            }
+        }
+
+        
+    }
     @objc private func handleTextField(_ sender: UITextField){
            if sender == emailTextField{
                viewModel.emailText = sender.text
            }else if sender == passwordTextField{
                viewModel.passwordText = sender.text
-           }else if sender == nameTextField{
-               viewModel.nameText = sender.text
            }else{
-               viewModel.usernameText = sender.text
+               viewModel.nameText = sender.text
            }
            registerButtonStatus()
        }
@@ -132,7 +141,7 @@ extension RegisterViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         
-        stackView = UIStackView(arrangedSubviews: [emailContainerView,nameContainerView,usernameContainerView, passwordContainerView, registerButton])
+        stackView = UIStackView(arrangedSubviews: [emailContainerView,nameContainerView, passwordContainerView, registerButton])
         stackView.axis = .vertical
         stackView.spacing = 14
         stackView.distribution = .fillEqually
@@ -143,8 +152,6 @@ extension RegisterViewController {
         emailTextField.addTarget(self, action: #selector(handleTextField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(handleTextField), for: .editingChanged)
         nameTextField.addTarget(self, action: #selector(handleTextField), for: .editingChanged)
-        usernameTextField.addTarget(self, action: #selector(handleTextField), for: .editingChanged)
-        
     }
     
     
@@ -176,6 +183,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate , UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as! UIImage
+        self.profileImage = image
         cameraButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
         cameraButton.clipsToBounds = true
         cameraButton.layer.cornerRadius = 150 / 2

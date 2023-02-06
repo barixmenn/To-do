@@ -14,6 +14,7 @@
 		606D3E3B298FF55600A29672 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 606D3E3A298FF55600A29672 /* FirebaseDatabase */; };
 		606D3E3D298FF55600A29672 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 606D3E3C298FF55600A29672 /* FirebaseFirestore */; };
 		606D3E3F298FF55600A29672 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 606D3E3E298FF55600A29672 /* FirebaseStorage */; };
+		60872F4D2990FEE700D8833B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60872F4C2990FEE700D8833B /* AuthenticationService.swift */; };
 		60F81453298EDFAC00E4C8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81452298EDFAC00E4C8CA /* AppDelegate.swift */; };
 		60F81455298EDFAC00E4C8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81454298EDFAC00E4C8CA /* SceneDelegate.swift */; };
 		60F81457298EDFAC00E4C8CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81456298EDFAC00E4C8CA /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		606D3E31298FDE9400A29672 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		606D3E33298FE59A00A29672 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		606D3E35298FF35800A29672 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		60872F4C2990FEE700D8833B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		60F8144F298EDFAC00E4C8CA /* To-do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F81452298EDFAC00E4C8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F81454298EDFAC00E4C8CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60872F4B2990FECE00D8833B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				60872F4C2990FEE700D8833B /* AuthenticationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		60F81446298EDFAC00E4C8CA = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		60F81451298EDFAC00E4C8CA /* To-do */ = {
 			isa = PBXGroup;
 			children = (
+				60872F4B2990FECE00D8833B /* Service */,
 				60F81470298EFED800E4C8CA /* View Model */,
 				60F8146B298EF6C600E4C8CA /* View */,
 				60F81468298EE23500E4C8CA /* Extensions */,
@@ -222,6 +233,7 @@
 				60F8146A298EE25700E4C8CA /* extensions.swift in Sources */,
 				606D3E34298FE59A00A29672 /* RegisterViewModel.swift in Sources */,
 				60F81472298F032900E4C8CA /* LoginViewModel.swift in Sources */,
+				60872F4D2990FEE700D8833B /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
