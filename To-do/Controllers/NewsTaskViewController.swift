@@ -57,6 +57,11 @@ extension NewTaskViewController{
     }
     @objc private func handleAddButton(){
         guard let text = textView.text else {return}
+        Service.sendTask(text: text) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
         self.dismiss(animated: true)
     }
 }

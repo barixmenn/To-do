@@ -22,6 +22,7 @@
 		60872F5A29914BB300D8833B /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60872F5929914BB300D8833B /* TaskViewController.swift */; };
 		60CF621F2992EE24009AE158 /* NewsTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF621E2992EE24009AE158 /* NewsTaskViewController.swift */; };
 		60CF62212992F92C009AE158 /* InputTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF62202992F92C009AE158 /* InputTextFields.swift */; };
+		60CF62232993172C009AE158 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF62222993172C009AE158 /* Service.swift */; };
 		60F81453298EDFAC00E4C8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81452298EDFAC00E4C8CA /* AppDelegate.swift */; };
 		60F81455298EDFAC00E4C8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81454298EDFAC00E4C8CA /* SceneDelegate.swift */; };
 		60F81457298EDFAC00E4C8CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81456298EDFAC00E4C8CA /* LoginViewController.swift */; };
@@ -44,6 +45,7 @@
 		60872F5929914BB300D8833B /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		60CF621E2992EE24009AE158 /* NewsTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTaskViewController.swift; sourceTree = "<group>"; };
 		60CF62202992F92C009AE158 /* InputTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFields.swift; sourceTree = "<group>"; };
+		60CF62222993172C009AE158 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		60F8144F298EDFAC00E4C8CA /* To-do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F81452298EDFAC00E4C8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F81454298EDFAC00E4C8CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				60872F4C2990FEE700D8833B /* AuthenticationService.swift */,
+				60CF62222993172C009AE158 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				60F8146A298EE25700E4C8CA /* extensions.swift in Sources */,
 				606D3E34298FE59A00A29672 /* RegisterViewModel.swift in Sources */,
 				60872F5629914B6800D8833B /* PastTaskViewController.swift in Sources */,
+				60CF62232993172C009AE158 /* Service.swift in Sources */,
 				60872F5829914B9200D8833B /* ProfileViewController.swift in Sources */,
 				60CF62212992F92C009AE158 /* InputTextFields.swift in Sources */,
 				60CF621F2992EE24009AE158 /* NewsTaskViewController.swift in Sources */,
