@@ -24,4 +24,10 @@ extension UIViewController{
             jgprogress.dismiss(animated: true)
         }
     }
+    
+   
+}
+
+extension UIColor{
+    static let mainColor = UIColor.systemBlue.withAlphaComponent(0.7)
 }

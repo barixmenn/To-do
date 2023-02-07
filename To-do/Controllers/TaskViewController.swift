@@ -35,7 +35,7 @@ class TaskViewController: UIViewController {
 //MARK: - Selector
 extension TaskViewController {
     @objc private func handleNewTaskButton() {
-        let controller = NewsTaskViewController()
+        let controller = NewTaskViewController()
         if let sheet = controller.sheetPresentationController {
             sheet.detents = [.medium()]
         }
