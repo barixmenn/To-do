@@ -9,11 +9,7 @@ import UIKit
 import JGProgressHUD
 extension UIViewController{
     func backgroundGradientColor(){
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemCyan.cgColor, UIColor.systemMint.cgColor]
-        gradient.locations = [0,1]
-        gradient.frame = view.bounds
-        view.layer.addSublayer(gradient)
+        view.layer.backgroundColor = UIColor(red: 0.571, green: 0.302, blue: 0.302, alpha: 1).cgColor
     }
     
     func showHud(show: Bool) {

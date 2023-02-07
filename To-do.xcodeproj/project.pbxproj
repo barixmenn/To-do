@@ -80,7 +80,6 @@
 		60F81446298EDFAC00E4C8CA = {
 			isa = PBXGroup;
 			children = (
-				60872F5929914BB300D8833B /* TaskViewController.swift */,
 				60F81451298EDFAC00E4C8CA /* To-do */,
 				60F81450298EDFAC00E4C8CA /* Products */,
 			);
@@ -112,6 +111,7 @@
 		60F81466298EE01C00E4C8CA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				60872F5929914BB300D8833B /* TaskViewController.swift */,
 				60F81456298EDFAC00E4C8CA /* LoginViewController.swift */,
 				606D3E31298FDE9400A29672 /* RegisterViewController.swift */,
 				60872F50299107F300D8833B /* MainTabBarViewController.swift */,

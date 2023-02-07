@@ -73,7 +73,7 @@ extension MainTabBarViewController {
           shape.path = bezier.cgPath
           shape.fillColor = UIColor.white.cgColor
         self.tabBar.itemPositioning = .fill
-          self.tabBar.itemWidth = ((self.tabBar.bounds.width) - 20) / 5
+          self.tabBar.itemWidth = ((self.tabBar.bounds.width) - 28) / 3
           self.tabBar.tintColor = UIColor.systemBlue.withAlphaComponent(0.4)
           self.tabBar.unselectedItemTintColor = UIColor.lightGray
           self.tabBar.layer.insertSublayer(shape, at: 0)
