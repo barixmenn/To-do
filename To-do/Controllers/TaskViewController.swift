@@ -17,6 +17,7 @@ class TaskViewController: UIViewController {
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
         button.tintColor = .white
+        button.addTarget(self, action: #selector(handleNewTaskButton), for: .touchUpInside)
         return button
     }()
     
@@ -31,6 +32,16 @@ class TaskViewController: UIViewController {
     }
 }
 
+//MARK: - Selector
+extension TaskViewController {
+    @objc private func handleNewTaskButton() {
+        let controller = NewsTaskViewController()
+        if let sheet = controller.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        self.present(controller, animated: true)
+    }
+}
 //MARK: - Helpers
 extension TaskViewController {
     private func style() {
