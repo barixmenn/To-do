@@ -56,8 +56,8 @@ extension TaskCell{
         private func style() {
             circleButton.translatesAutoresizingMaskIntoConstraints = false
             taskLabel.translatesAutoresizingMaskIntoConstraints = false
-            backgroundColor = .secondaryLabel
-            layer.cornerRadius = 10
+            backgroundColor = .lightGray
+            layer.cornerRadius = 15
             layer.shadowColor = UIColor.black.withAlphaComponent(0.4).cgColor
             layer.shadowOffset = CGSize(width: 0, height: 3)
             layer.shadowOpacity = 5
@@ -68,14 +68,14 @@ extension TaskCell{
             addSubview(circleButton)
             addSubview(taskLabel)
             NSLayoutConstraint.activate([
-                circleButton.heightAnchor.constraint(equalToConstant: 50),
-                circleButton.widthAnchor.constraint(equalToConstant: 50),
+                circleButton.heightAnchor.constraint(equalToConstant: 60),
+                circleButton.widthAnchor.constraint(equalToConstant: 60),
                 circleButton.centerYAnchor.constraint(equalTo: centerYAnchor),
                 circleButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
                 
                 taskLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-                taskLabel.leadingAnchor.constraint(equalTo: circleButton.trailingAnchor, constant: 8),
-                trailingAnchor.constraint(equalTo: taskLabel.trailingAnchor,constant: 8),
+                taskLabel.leadingAnchor.constraint(equalTo: circleButton.trailingAnchor),
+                trailingAnchor.constraint(equalTo: taskLabel.trailingAnchor,constant: 3),
                 bottomAnchor.constraint(equalTo: taskLabel.bottomAnchor, constant: 8)
             ])
         }
