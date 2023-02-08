@@ -11,6 +11,8 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct Service {
+    static private var pastTasks = [Task]()
+
     
     static func sendTask(text:String, completion: @escaping(Error?)-> Void) {
         guard let currentUid = Auth.auth().currentUser?.uid else {return}
@@ -64,4 +66,6 @@ struct Service {
             })
         }
     }
+    
+ 
 }

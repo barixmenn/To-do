@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600AF87B29942D3B00BBB72A /* PastTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AF87A29942D3B00BBB72A /* PastTaskCell.swift */; };
 		6051E05D29940855005B659F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6051E05C29940855005B659F /* Task.swift */; };
 		6051E05F29940B9F005B659F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6051E05E29940B9F005B659F /* Constant.swift */; };
 		606D3E32298FDE9400A29672 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D3E31298FDE9400A29672 /* RegisterViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		600AF87A29942D3B00BBB72A /* PastTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTaskCell.swift; sourceTree = "<group>"; };
 		6051E05C29940855005B659F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		6051E05E29940B9F005B659F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		606D3E31298FDE9400A29672 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				60F8146C298EF6D500E4C8CA /* AuthenticationInputView.swift */,
 				60F8146E298EF77300E4C8CA /* CustomTextField.swift */,
 				60AE34682993E67D0070D469 /* TaskCell.swift */,
+				600AF87A29942D3B00BBB72A /* PastTaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				60F8146A298EE25700E4C8CA /* extensions.swift in Sources */,
 				606D3E34298FE59A00A29672 /* RegisterViewModel.swift in Sources */,
 				60872F5629914B6800D8833B /* PastTaskViewController.swift in Sources */,
+				600AF87B29942D3B00BBB72A /* PastTaskCell.swift in Sources */,
 				60CF62232993172C009AE158 /* Service.swift in Sources */,
 				6051E05D29940855005B659F /* Task.swift in Sources */,
 				60872F5829914B9200D8833B /* ProfileViewController.swift in Sources */,
