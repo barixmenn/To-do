@@ -20,6 +20,7 @@
 		60872F5629914B6800D8833B /* PastTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60872F5529914B6800D8833B /* PastTaskViewController.swift */; };
 		60872F5829914B9200D8833B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60872F5729914B9200D8833B /* ProfileViewController.swift */; };
 		60872F5A29914BB300D8833B /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60872F5929914BB300D8833B /* TaskViewController.swift */; };
+		60AE34692993E67D0070D469 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AE34682993E67D0070D469 /* TaskCell.swift */; };
 		60CF621F2992EE24009AE158 /* NewsTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF621E2992EE24009AE158 /* NewsTaskViewController.swift */; };
 		60CF62212992F92C009AE158 /* InputTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF62202992F92C009AE158 /* InputTextFields.swift */; };
 		60CF62232993172C009AE158 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF62222993172C009AE158 /* Service.swift */; };
@@ -43,6 +44,7 @@
 		60872F5529914B6800D8833B /* PastTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTaskViewController.swift; sourceTree = "<group>"; };
 		60872F5729914B9200D8833B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		60872F5929914BB300D8833B /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		60AE34682993E67D0070D469 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		60CF621E2992EE24009AE158 /* NewsTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTaskViewController.swift; sourceTree = "<group>"; };
 		60CF62202992F92C009AE158 /* InputTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFields.swift; sourceTree = "<group>"; };
 		60CF62222993172C009AE158 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				60F8146C298EF6D500E4C8CA /* AuthenticationInputView.swift */,
 				60F8146E298EF77300E4C8CA /* CustomTextField.swift */,
+				60AE34682993E67D0070D469 /* TaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				60CF62212992F92C009AE158 /* InputTextFields.swift in Sources */,
 				60CF621F2992EE24009AE158 /* NewsTaskViewController.swift in Sources */,
 				60F81472298F032900E4C8CA /* LoginViewModel.swift in Sources */,
+				60AE34692993E67D0070D469 /* TaskCell.swift in Sources */,
 				60872F4D2990FEE700D8833B /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
