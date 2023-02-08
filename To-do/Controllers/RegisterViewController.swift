@@ -12,7 +12,7 @@ class RegisterViewController : UIViewController {
     private var viewModel = RegisterViewModel()
     private var profileImage : UIImage?
     //MARK: - UI Elements
-    private let cameraButton : UIButton = {
+    private lazy var  cameraButton : UIButton = {
         let camera = UIButton(type: .system)
         camera.setImage(UIImage(systemName: "camera.circle"), for: .normal)
         camera.tintColor = .white

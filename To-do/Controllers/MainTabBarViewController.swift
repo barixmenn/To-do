@@ -33,7 +33,7 @@ extension MainTabBarViewController {
             print("Kullanıcı yok")
             let navigation = LoginViewController()
             navigation.modalPresentationStyle = .fullScreen
-            present(navigation, animated: true)
+            self.present(navigation, animated: true)
         } else {
             print("Kullanıcı var")
         }
@@ -42,7 +42,7 @@ extension MainTabBarViewController {
         do {
             try Auth.auth().signOut()
         }catch {
-            
+            print("Error: \(error.localizedDescription)")
         }
     }
 }
