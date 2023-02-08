@@ -125,7 +125,7 @@ extension TaskViewController{
     private func configure() {
         guard let user = self.user else {return}
         print("user:\(user.name)")
-        nameLabel.text = "Hi \(user.name) 🐥"
+        nameLabel.text = "Merhaba \(user.name) 🐥"
         fetchTask()
 
     }
@@ -151,11 +151,14 @@ extension TaskViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension TaskViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          return .init(width: view.frame.width * 0.9, height: 50)
+          let cell = PastTaskCell(frame: .init(x: 0, y: 0, width: view.frame.width * 0.9, height: 50))
+          cell.task = tasks[indexPath.row]
+          cell.layoutIfNeeded()
+          let copySize = cell.systemLayoutSizeFitting(.init(width: view.frame.width * 0.9, height: 1000))
+          return .init(width: view.frame.width * 0.9, height: copySize.height)
       }
-      
       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-          return .init(width: 15, height: 15)
+          return .init(width: 10, height: 10)
       }
 }
 

@@ -6,6 +6,7 @@
 //
 
 
+
 import UIKit
 class PastTaskCell: UICollectionViewCell {
     // MARK: - Properties
@@ -15,15 +16,14 @@ class PastTaskCell: UICollectionViewCell {
     private lazy var circleButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
-        button.tintColor = .lightGray
+        button.tintColor = .black
         return button
     }()
-    private var taskLabel: UILabel = {
+    private let taskLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.numberOfLines = 0
-        label.textColor = .lightGray
-        label.text = "deneme"
+        label.textColor = .black
         return label
     }()
     // MARK: - Lifecycle
@@ -40,20 +40,21 @@ class PastTaskCell: UICollectionViewCell {
 // MARK: - Helpers
 extension PastTaskCell{
     private func style(){
-        backgroundColor = .white
-        layer.cornerRadius = 5
+        backgroundColor = .white.withAlphaComponent(0.6)
+        layer.cornerRadius = 15
         layer.shadowColor = UIColor.black.withAlphaComponent(0.6).cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.shadowOpacity = 5
         circleButton.translatesAutoresizingMaskIntoConstraints = false
         taskLabel.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     private func layout(){
         addSubview(circleButton)
         addSubview(taskLabel)
         NSLayoutConstraint.activate([
-            circleButton.heightAnchor.constraint(equalToConstant: 50),
-            circleButton.widthAnchor.constraint(equalToConstant: 50),
+            circleButton.heightAnchor.constraint(equalToConstant: 60),
+            circleButton.widthAnchor.constraint(equalToConstant: 60),
             circleButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             circleButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             

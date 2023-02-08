@@ -34,6 +34,7 @@ extension MainTabBarViewController {
         guard let uid = Auth.auth().currentUser?.uid else {return}
         Service.fecthUser(id: uid) { user in
             self.taskViewController.user = user
+            self.pastTaskViewController.user = user 
         }
     }
 }
