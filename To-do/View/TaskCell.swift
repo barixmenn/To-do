@@ -9,6 +9,11 @@ import UIKit
 
 class TaskCell: UICollectionViewCell {
     
+    //MARK: - Properties
+     var task : Task? {
+        didSet { configure() }
+    }
+    
     //MARK: - UI Elements
     private lazy var circleButton: UIButton = {
         let button = UIButton(type: .system)
@@ -21,7 +26,6 @@ class TaskCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.textColor = .black
-        label.text = "Meyve al"
         label.numberOfLines = 0
         return label
     }()
@@ -78,5 +82,12 @@ extension TaskCell{
                 trailingAnchor.constraint(equalTo: taskLabel.trailingAnchor,constant: 3),
                 bottomAnchor.constraint(equalTo: taskLabel.bottomAnchor, constant: 8)
             ])
+        }
+        
+        private func configure() {
+            guard let task = self.task  else {return}
+            DispatchQueue.main.async {
+                self.taskLabel.text = task.text
+            }
         }
     }

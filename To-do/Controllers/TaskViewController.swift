@@ -16,7 +16,7 @@ private let reuseIdentifier = "TaskCell"
 class TaskViewController: UIViewController {
     
     //MARK: - Properties
-    private var user: User?{
+     var user: User?{
         didSet{configure()}
     }
     private var tasks = [Task]()
@@ -50,8 +50,6 @@ class TaskViewController: UIViewController {
         // Do any additional setup after loading the view.
         style()
         layout()
-        fetchUser()
-        fetchTask()
     }
     
     
@@ -62,23 +60,19 @@ class TaskViewController: UIViewController {
 extension TaskViewController {
     
     private func fetchTask() {
-        Service.fetchTask { tasks in
+        guard let uid = self.user?.uid else {return}
+        Service.fetchTask(uid: uid) { tasks in
             self.tasks = tasks
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-            
         }
     }
  
-    private func fetchUser() {
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        Service.fecthUser(id: uid) { user in
-            self.user = user
-        }
+  
         
     }
-}
+
 //MARK: - Selector
 extension TaskViewController {
     @objc private func handleNewTaskButton(_ sender: UIButton){
@@ -132,6 +126,8 @@ extension TaskViewController{
         guard let user = self.user else {return}
         print("user:\(user.name)")
         nameLabel.text = "Hi \(user.name) 🐥"
+        fetchTask()
+
     }
 }
 
@@ -143,7 +139,7 @@ extension TaskViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TaskCell
-        
+        cell.task = tasks[indexPath.row]
         return cell
     }
     

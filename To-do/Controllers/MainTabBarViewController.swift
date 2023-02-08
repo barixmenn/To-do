@@ -22,11 +22,23 @@ class MainTabBarViewController: UITabBarController {
         userStatus()
         //signOut()
         style()
+        fetchUser()
     }
 }
 
 
 //MARK: - Selector
+
+extension MainTabBarViewController {
+    private func fetchUser() {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        Service.fecthUser(id: uid) { user in
+            self.taskViewController.user = user
+        }
+    }
+}
+    
+//MARK: - Functios
 extension MainTabBarViewController {
     private func userStatus () {
         if Auth.auth().currentUser?.uid == nil {
