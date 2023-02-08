@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6051E05D29940855005B659F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6051E05C29940855005B659F /* Task.swift */; };
+		6051E05F29940B9F005B659F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6051E05E29940B9F005B659F /* Constant.swift */; };
 		606D3E32298FDE9400A29672 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D3E31298FDE9400A29672 /* RegisterViewController.swift */; };
 		606D3E34298FE59A00A29672 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D3E33298FE59A00A29672 /* RegisterViewModel.swift */; };
 		606D3E36298FF35800A29672 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 606D3E35298FF35800A29672 /* GoogleService-Info.plist */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6051E05C29940855005B659F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		6051E05E29940B9F005B659F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		606D3E31298FDE9400A29672 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		606D3E33298FE59A00A29672 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		606D3E35298FF35800A29672 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				60AE346B2993E9A10070D469 /* User.swift */,
+				6051E05C29940855005B659F /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			children = (
 				60F81469298EE25700E4C8CA /* extensions.swift */,
 				60CF62202992F92C009AE158 /* InputTextFields.swift */,
+				6051E05E29940B9F005B659F /* Constant.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 				606D3E34298FE59A00A29672 /* RegisterViewModel.swift in Sources */,
 				60872F5629914B6800D8833B /* PastTaskViewController.swift in Sources */,
 				60CF62232993172C009AE158 /* Service.swift in Sources */,
+				6051E05D29940855005B659F /* Task.swift in Sources */,
 				60872F5829914B9200D8833B /* ProfileViewController.swift in Sources */,
+				6051E05F29940B9F005B659F /* Constant.swift in Sources */,
 				60CF62212992F92C009AE158 /* InputTextFields.swift in Sources */,
 				60CF621F2992EE24009AE158 /* NewsTaskViewController.swift in Sources */,
 				60F81472298F032900E4C8CA /* LoginViewModel.swift in Sources */,

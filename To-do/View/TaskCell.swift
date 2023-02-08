@@ -56,7 +56,7 @@ extension TaskCell{
         private func style() {
             circleButton.translatesAutoresizingMaskIntoConstraints = false
             taskLabel.translatesAutoresizingMaskIntoConstraints = false
-            backgroundColor = .lightGray
+            backgroundColor = .white
             layer.cornerRadius = 15
             layer.shadowColor = UIColor.black.withAlphaComponent(0.4).cgColor
             layer.shadowOffset = CGSize(width: 0, height: 3)

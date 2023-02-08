@@ -31,4 +31,16 @@ struct Service {
             completion(user)
         }
     }
+    
+    static func fetchTask(completion: @escaping([Task])-> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        var tasks = [Task]()
+        COLLECTION_TASKS.document(uid).collection("continue").order(by: "timestamp").addSnapshotListener { snaphot, error in
+            snaphot?.documentChanges.forEach({ value in
+                let data = value.document.data()
+                tasks.append(Task(data: data))
+                completion(tasks)
+            })
+        }
+    }
 }

@@ -10,6 +10,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 
+
+
 struct AuthenticationViewModel {
     let emailText : String
     let passwordText : String
