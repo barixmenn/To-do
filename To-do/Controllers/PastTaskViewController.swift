@@ -19,7 +19,7 @@ class PastTaskViewController: UIViewController {
     private let nameLabel:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         label.textColor = .white
         label.text = "Tamamlanmış görevler 🎯"
         return label

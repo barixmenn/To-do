@@ -18,7 +18,6 @@ class MainTabBarViewController: UITabBarController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         userStatus()
         //signOut()
         style()

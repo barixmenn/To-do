@@ -109,8 +109,8 @@ extension TaskViewController{
         NSLayoutConstraint.activate([
             view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: newTaskButton.bottomAnchor, constant: 30),
             view.trailingAnchor.constraint(equalTo: newTaskButton.trailingAnchor, constant: 4),
-            newTaskButton.heightAnchor.constraint(equalToConstant: 60),
-            newTaskButton.widthAnchor.constraint(equalToConstant: 60),
+            newTaskButton.heightAnchor.constraint(equalToConstant: 50),
+            newTaskButton.widthAnchor.constraint(equalToConstant: 50),
             
             nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),

@@ -28,6 +28,8 @@
 		60CF621F2992EE24009AE158 /* NewsTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF621E2992EE24009AE158 /* NewsTaskViewController.swift */; };
 		60CF62212992F92C009AE158 /* InputTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF62202992F92C009AE158 /* InputTextFields.swift */; };
 		60CF62232993172C009AE158 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF62222993172C009AE158 /* Service.swift */; };
+		60F79798299512B0000FCC25 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 60F79797299512B0000FCC25 /* SDWebImage */; };
+		60F7979A299512B0000FCC25 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 60F79799299512B0000FCC25 /* SDWebImageMapKit */; };
 		60F81453298EDFAC00E4C8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81452298EDFAC00E4C8CA /* AppDelegate.swift */; };
 		60F81455298EDFAC00E4C8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81454298EDFAC00E4C8CA /* SceneDelegate.swift */; };
 		60F81457298EDFAC00E4C8CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F81456298EDFAC00E4C8CA /* LoginViewController.swift */; };
@@ -74,10 +76,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F79798299512B0000FCC25 /* SDWebImage in Frameworks */,
 				606D3E3B298FF55600A29672 /* FirebaseDatabase in Frameworks */,
 				606D3E3F298FF55600A29672 /* FirebaseStorage in Frameworks */,
 				606D3E39298FF55600A29672 /* FirebaseAuth in Frameworks */,
 				606D3E3D298FF55600A29672 /* FirebaseFirestore in Frameworks */,
+				60F7979A299512B0000FCC25 /* SDWebImageMapKit in Frameworks */,
 				60872F542991250400D8833B /* JGProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +216,8 @@
 				606D3E3C298FF55600A29672 /* FirebaseFirestore */,
 				606D3E3E298FF55600A29672 /* FirebaseStorage */,
 				60872F532991250400D8833B /* JGProgressHUD */,
+				60F79797299512B0000FCC25 /* SDWebImage */,
+				60F79799299512B0000FCC25 /* SDWebImageMapKit */,
 			);
 			productName = "To-do";
 			productReference = 60F8144F298EDFAC00E4C8CA /* To-do.app */;
@@ -244,6 +250,7 @@
 			packageReferences = (
 				606D3E37298FF55600A29672 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				60872F522991250400D8833B /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				60F79796299512B0000FCC25 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 60F81450298EDFAC00E4C8CA /* Products */;
 			projectDirPath = "";
@@ -521,6 +528,14 @@
 				kind = branch;
 			};
 		};
+		60F79796299512B0000FCC25 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -548,6 +563,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 60872F522991250400D8833B /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
+		};
+		60F79797299512B0000FCC25 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60F79796299512B0000FCC25 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		60F79799299512B0000FCC25 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60F79796299512B0000FCC25 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

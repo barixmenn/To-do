@@ -40,7 +40,7 @@ class PastTaskCell: UICollectionViewCell {
 // MARK: - Helpers
 extension PastTaskCell{
     private func style(){
-        backgroundColor = .white.withAlphaComponent(0.6)
+        backgroundColor = .white.withAlphaComponent(0.3)
         layer.cornerRadius = 15
         layer.shadowColor = UIColor.black.withAlphaComponent(0.6).cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
