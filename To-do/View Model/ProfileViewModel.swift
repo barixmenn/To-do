@@ -6,15 +6,19 @@
 //
 
 import Foundation
-
 struct ProfileViewModel{
-    var profileString: String
-    
-    init(profileString: String) {
-        self.profileString = profileString
+    var user: User
+    init(user: User) {
+        self.user = user
     }
-    
     var profileImageUrl: URL?{
-        return URL(string: profileString)
+        return URL(string: user.profileImageUrl)
+    }
+    var name: String?{
+        return user.name
+    }
+ 
+    var email: String?{
+        return user.email
     }
 }
