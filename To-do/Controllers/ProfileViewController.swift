@@ -6,19 +6,22 @@
 //
 
 import UIKit
-
+import SDWebImage
 class ProfileViewController: UIViewController {
     
     //MARK: - Properties
+    var user: User? {
+        didSet { configure() }
+    }
     
     //MARK: - UI Elements
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.borderColor = UIColor.white.cgColor
-        imageView.backgroundColor = .lightGray
+        imageView.layer.borderColor = UIColor.black.cgColor
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 150 / 2
+        imageView.layer.borderWidth = 2
         return imageView
     }()
   //MARK: - Lifecycle
@@ -44,5 +47,12 @@ extension ProfileViewController {
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         
         ])
+    }
+    
+    private func configure() {
+        guard let user = user else {return}
+        let viewModel = ProfileViewModel(profileString: user.profileImageUrl)
+        imageView.sd_setImage(with: viewModel.profileImageUrl)
+        
     }
 }
