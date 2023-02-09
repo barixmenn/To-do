@@ -8,23 +8,41 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    //MARK: - Properties
+    
+    //MARK: - UI Elements
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.backgroundColor = .lightGray
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 150 / 2
+        return imageView
+    }()
+  //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
+        layout()
+    }
+}
 
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .brown
+//MARK: - Helpers
+extension ProfileViewController {
+    private func style() {
+        backgroundGradientColor()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func layout() {
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            imageView.heightAnchor.constraint(equalToConstant: 150),
+            imageView.widthAnchor.constraint(equalToConstant: 150),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        
+        ])
     }
-    */
-
 }
